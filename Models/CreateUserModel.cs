@@ -10,5 +10,7 @@ namespace mongotest.Models
         public string Name { get; set; }
 
         public string Nin { get; set; }
+
+        public string Cedula { get; set; }
     }
 }

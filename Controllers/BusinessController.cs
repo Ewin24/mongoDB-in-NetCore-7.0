@@ -30,7 +30,7 @@ namespace mongotest.Controllers
 
             try
             {
-                var user = new User(userModel.Name, userModel.Nin);
+                var user = new User(userModel.Name, userModel.Nin, userModel.Cedula);
                 await _repositoryUser.InsertAsync(user);
                 await _clientSessionHandle.CommitTransactionAsync();
 
@@ -53,7 +53,7 @@ namespace mongotest.Controllers
             try
             {
                 var author = new Author(authorAndUserModel.AuthorModel.Name, new List<Book>(authorAndUserModel.AuthorModel.Books.Select(s => new Book(s.Name, s.Year))));
-                var user = new User(authorAndUserModel.UserModel.Name, authorAndUserModel.UserModel.Nin);
+                var user = new User(authorAndUserModel.UserModel.Name, authorAndUserModel.UserModel.Nin, authorAndUserModel.UserModel.Cedula);
 
                 await _repositoryAuthor.InsertAsync(author);
                 await _repositoryUser.InsertAsync(user);

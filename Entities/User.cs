@@ -9,13 +9,16 @@ namespace mongotest.Entities
 {
     public class User : BaseEntity
     {
-        public User(string name, string nin) =>
-            (Name, Nin) = (name, nin);
+        public User(string name, string nin, string cedula) =>
+            (Name, Nin, Cedula) = (name, nin, cedula);
 
         [BsonElement("name")]
         public string Name { get; }
 
         [BsonElement("national_insurance_number")]
         public string Nin { get; }
+
+        [BsonElement("cedula")]
+        public string Cedula { get; }
     }
 }
